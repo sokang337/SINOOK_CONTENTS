@@ -1,0 +1,20 @@
+/* common */
+.projectNm{width:640px;margin:30px auto 5px}
+
+/*#wrapper{min-width:600px}*/
+
+
+
+/*project1 {}*/
+
+/* images */
+.projectImg1{background:url('../images/project1.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto}
+/*.projectImg1:hover{background:url('../images/project1.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto}*/
+.projectImg2{background:url('../images/project2.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto}
+.projectImg3{background:url('../images/project3.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto}
+.projectImg4{background:url('../images/project4.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto}
+
+
+/* footer */
+.footerBG{background:#EAEAEA;height:50px;margin-top:50px}
+.footerText{color:rgba(88, 88, 88, 0.5);margin:15px 0 0 40px}
