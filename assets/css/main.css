@@ -5,14 +5,14 @@
 /*#wrapper{min-width:600px}*/
 
 /* images */
-.projectImg1{background:url('../images/project1.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
-.projectImg2{background:url('../images/project2.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
-.projectImg3{background:url('../images/project3.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
-.projectImg4{background:url('../images/project4.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
-.projectImg5{background:url('../images/project4.png') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
+.projectImg1{background:url('../images/project1.PNG') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
+.projectImg2{background:url('../images/project2.PNG') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
+.projectImg3{background:url('../images/project3.PNG') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
+.projectImg4{background:url('../images/project4.PNG') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
+.projectImg5{background:url('../images/project4.PNG') 50% 50% no-repeat;background-size:100% 100%;width:640px;height:240px;margin:0 auto;position:relative;display:inline-block;cursor:pointer;left:150px;z-index:1000}
 
-.githubImg{background:url('../images/gitHub.png') 50% 50% no-repeat;background-size:100% 100%;width:45px; height:45px;margin:40px auto 0;cursor:pointer}
-.startImg{background:url('../images/start.png') 50% 50% no-repeat;background-size:100% 100%;width:45px; height:45px;margin:40px auto 0;cursor:pointer}
+.githubImg{background:url('../images/gitHub.PNG') 50% 50% no-repeat;background-size:100% 100%;width:45px; height:45px;margin:40px auto 0;cursor:pointer}
+.startImg{background:url('../images/start.PNG') 50% 50% no-repeat;background-size:100% 100%;width:45px; height:45px;margin:40px auto 0;cursor:pointer}
 
 /* footer */
 .footerBG{background:#EAEAEA;height:50px;margin-top:50px}
