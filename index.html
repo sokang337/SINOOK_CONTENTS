@@ -1,110 +1,171 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="assets/css/bootstrap/carousel.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
     <!-- Script -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+	<script src="assets/js/holder.js"></script>
     <script src="assets/js/main.js"></script>
 
     <title>강신욱 - 웹 포트폴리오</title>
 </head>
-<body>
-    <!-- Wrapper -->
-    <div id="wrapper">
-		<!-- Header -->
-        <div class="container">    
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <a href="index.html" class="logo">
-                        <span class="title">web portfolio</span>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h1>OOK's Projects</h1>
-                </div>
-            </div>
-        </div>
+<body data-spy="scroll">
+	<div class="navbar-wrapper">
+		<div class="container">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="https://sokang337.github.io/SINOOK_CONTENTS/">SINOOK Proejcts</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class='active'><a href="#projectNm1">Hyudai Kona</a></li>
+							<li><a href="#projectNm2">TimeSolution</a></li>
+							<li><a href="#projectNm3">TIIZ</a></li>
+							<li><a href="#projectNm4">CJ Azit</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row mt100">
+			<div class="col-md-4">
+				<h2 class='projectNm'>Hyundai Kona ChatBot</h2>
+				<button id="project1" class="btn btn-primary project">바로가기</button>
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">자세히</button>
+				<div class="collapse" id="collapse1">
+					<div class="well">
+						<p><strong>reel.js</strong>를 이용한 차량 360도 회전 보기</p>
+						<p><strong>bootstrap</strong>사용, 이미지 갯수에 따른 carousel 활용</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<img id="project1" class="img-responsive center-block projectImg" src="assets/images/project1.PNG">
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">source view</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							<pre>
+================================================================================
+(reel.js 활용)
+if($('.vr-wrapper').css('display', 'block')){
+	$('#image').reel({
+		images: "https://bottest.hyundai.com/assets/images/price/360/"+exColor+"/000##.jpg",
+		frames: 60,
+		cw: true,
+		brake: 10,
+		throwable: 10
+	});
+}
+$(".popTxt").removeClass('wc-message-from');
+$('.vr-wrapper').show().animate({ "left": "-70px", "opacity": "1" }, "fast");
+$(this).parent().addClass('on');
+================================================================================
+(bootstrap 사용, 이미지 갯수에 따른 carousel 활용)
+$('#imgSlideCnt > li').remove();
+$('#imgDiv > div').remove();
+$('#imgCarousel > ol').add( "이미지 슬라이드 클래스" ).appendTo('#imgCarousel > ol');
+$('#imgCarousel > div').add("첫번째 이미지").appendTo('#imgCarousel > div');
+var manyImg = false;
+var imgUrl = $(this).children().eq(0).attr('src');
+var imgPopTitle = $(this).children().eq(2).attr('alt');
+var imgCnt = $(this).children().eq(3).attr('alt');
 		
-        <!-- Main -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="projectNm">현대자동차 'KONA' ChatBot</h4>
-					<div id="project1" class="projectImg1"></div>
-					<div class="projectLink">
-						<div id="gitpage1" class="githubImg"></div>
-						<div class="tac">gitHub source Link</div>
-						<div id="webpage1" class="startImg"></div>
-						<div class="tac">web page Link</div>
+if(imgCnt != ''){
+	manyImg = true;
+	var tempImg = imgUrl.substring(0, imgUrl.lastIndexOf('-'));
+	for(var i=2; i<=parseInt(imgCnt); i++){
+		$('#imgCarousel > ol').add( "이미지 슬라이드 클래스" ).appendTo('#imgCarousel > ol');
+		$('#imgCarousel > div').add("지정된 갯수에 따른 이미지").appendTo('#imgCarousel > div');
+	}
+}else{
+	$('#imgSlideCnt > li').remove();
+}
+		
+if(manyImg){
+	$('#imgCarousel > div').add("이미지 슬라이드 아이콘").appendTo('#imgCarousel > div');	
+}
+var smallImg = $(this).children().eq(0).attr('src');
+var largeImg = smallImg.substring(0, smallImg.lastIndexOf('.')) + 'p.jpg';
+$('#imgTag').attr('src',largeImg );
+$('#imgTitle').text($(this).children().eq(2).attr('alt'));
+$('.img-wrapper').show().animate({ "left": "-70px", "opacity": "1" }, "fast");
+$(this).parent().addClass('on');
+================================================================================
+							</pre>
+						</div>
 					</div>
-                </div>
-            </div>
+				</div>
+			</div>
+		</div>
 
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="projectNm">TimeSolution ChatBot</h4>
-                    <div id="project2" class="projectImg2"></div>
-					<div class="projectLink">
-						<div id="gitpage2" class="githubImg"></div>
-						<div class="tac">gitHub source Link</div>
-						<div id="webpage2" class="startImg"></div>
-						<div class="tac">web page Link</div>
+		<div class="row mt30">
+			<div class="col-md-4 col-md-push-8">
+				<h2 class='projectNm'>TimeSolution ChatBot</h2>
+				<button id="project2" class="btn btn-primary project">바로가기</button>
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">자세히</button>
+				<div class="collapse" id="collapse2">
+					<div class="well">
+						<p><strong>three.js</strong>를 이용한 케릭터 활성화 챗봇</p>
+						<p><strong>jQuery autocomplete</strong>를 이용한 자동완성 기능</p>
 					</div>
-                </div>
-            </div>
+				</div>
+			</div>
+			<div class="col-md-8 col-md-pull-4">
+				<img id="project2" class="img-responsive center-block projectImg" src="assets/images/project2.PNG" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+			</div>
+		</div>
 
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="projectNm">TIIZ Web Site</h4>
-                    <div id="project3" class="projectImg3"></div>
-					<div class="projectLink">
-						<div id="gitpage3" class="githubImg"></div>
-						<div class="tac">gitHub source Link</div>
-						<div id="webpage3" class="startImg"></div>
-						<div class="tac">web page Link</div>
-					</div>
-                </div>
-            </div>
+		<div class="row mt30">
+			<div class="col-md-4">
+				<h2 id='projectNm3'>TIIZ WebSite</h2>
+			</div>
+			<div class="col-md-8">
+				<img id="project3" class="img-responsive center-block projectImg" src="assets/images/project3.PNG">
+			</div>
+		</div>
 
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="projectNm">CJ Azit ChatBot</h4>
-                    <div id="project4" class="projectImg4"></div>
-					<div class="projectLink">
-						<div id="gitpage4" class="githubImg"></div>
-						<div class="tac">gitHub source Link</div>
-						<div id="webpage4" class="startImg"></div>
-						<div class="tac">web page Link</div>
-					</div>
-                </div>
-            </div>
+		<div class="row mt30">
+			<div class="col-md-4 col-md-push-8">
+				<h2 id='projectNm4'>CJ Azit ChatBot</h2>
+			</div>
+			<div class="col-md-8 col-md-pull-4">
+				<img id="project4" class="img-responsive center-block projectImg" src="assets/images/project4.PNG">
+			</div>
+		</div>
+	</div>
 
-			<!--<div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 class="projectNm">TaihoInst ChatBot</h4>
-                    <div id="project5" class="projectImg5"></div>
-                </div>
-            </div>-->
-        </div>
-
-        <!-- Footer -->
-        <div class="container-fluid">
-            <div class="row footerBG">
-                <div class="footerText">
-                    <small>&copy; KANG SINOOK. All rights reserved</small>
-                </div>
-            </div>
-        </div>
-
-    </div>
+	<footer class="panel panel-default fixed-bottom">
+		<div class="panel-body">
+			Basic panel example
+		</div>
+	</footer>
 </body>
+
 </html>
