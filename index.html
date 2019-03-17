@@ -7,7 +7,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css" />
 	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap-theme.min.css" />
-	<link rel="stylesheet" href="assets/css/bootstrap/carousel.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
     <!-- Script -->
@@ -66,10 +65,10 @@
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="headingOne">
 						<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">source view</a>
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseview1" aria-expanded="true" aria-controls="collapseview1">source view</a>
 						</h4>
 					</div>
-					<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div id="collapseview1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 						<div class="panel-body">
 							<pre>
 ================================================================================
@@ -140,30 +139,142 @@ $(this).parent().addClass('on');
 			<div class="col-md-8 col-md-pull-4">
 				<img id="project2" class="img-responsive center-block projectImg" src="assets/images/project2.PNG" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
 			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseview2" aria-expanded="true" aria-controls="collapseview2">source view</a>
+						</h4>
+					</div>
+					<div id="collapseview2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							<pre>
+================================================================================
+(reel.js 활용)
+var startJesture = 0;
+$('.topGestureIcon').click(function () {
+    if (startJesture == 0) {
+        playAnimation('ChatBot_AniAll01');
+        startJesture = 1;
+    }
+    $('.gesture-wrapper').show().animate({ "right": "380px", "opacity": "1" }, "slow").fadeIn("slow");
+});
+================================================================================
+(jQuery autocomplete를 활용)
+//keyboard action으로 담을 변수
+var keyboardText = '';  
+
+//input 출력
+$(".wc-shellinput").autocomplete({
+    position: { my: "right bottom-25", at: "right" },
+    source: function (request, response) {
+        var results = $.ui.autocomplete.filter(autocomplete_text, request.term);
+        response(results.slice(0, 5));  //갯수 제한 5개
+    },
+    focus: function (event, ui) {   //한글만 검색됬을시 자동검색창 닫히는 현상(버전업 버그)
+        return false;
+    },
+    open: function (event, ui) {
+        $(document).on('click', '.ui-menu-item-wrapper', function () {
+            $('.wc-shellinput').attr('value', $(this).text());
+            $('.hiddenText').attr('value', $(this).text());
+        }).on('keydown', '.wc-shellinput', function () {
+            if ($('.ui-menu-item-wrapper').text()) {
+                keyboardText = $('.ui-state-active').text();
+            }
+        });
+    },
+    close: function (event, ui) {
+        //keyboard일 경우 닫을때 담아준다
+        $('.wc-shellinput').attr('value', keyboardText);
+        $('.hiddenText').attr('value', keyboardText);
+    }
+});
+================================================================================
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="row mt30">
 			<div class="col-md-4">
 				<h2 id='projectNm3'>TIIZ WebSite</h2>
+				<button id="project2" class="btn btn-primary project">바로가기</button>
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">자세히</button>
+				<div class="collapse" id="collapse3">
+					<div class="well">
+						<p><strong>bootstrap</strong>을 활용한 webSite 제작</p>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-8">
 				<img id="project3" class="img-responsive center-block projectImg" src="assets/images/project3.PNG">
 			</div>
 		</div>
 
-		<div class="row mt30">
+		<div class="row mt30 mb50">
 			<div class="col-md-4 col-md-push-8">
 				<h2 id='projectNm4'>CJ Azit ChatBot</h2>
+				<button id="project2" class="btn btn-primary project">바로가기</button>
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">자세히</button>
+				<div class="collapse" id="collapse4">
+					<div class="well">
+						<p>microsoft의 <strong>botchat.js</strong>를 이용한 챗봇 custermizing</p>
+						<p><strong>typeScript</strong>로 컴파일된 스크립트를 역으로 파악하여 필요기능 수정</p>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-8 col-md-pull-4">
 				<img id="project4" class="img-responsive center-block projectImg" src="assets/images/project4.PNG">
 			</div>
+			<div class="clearfix"></div>
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapseview4" aria-expanded="true" aria-controls="collapseview4">source view</a>
+						</h4>
+					</div>
+					<div id="collapseview4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+							<pre>
+================================================================================
+(모바일 기종에 따른 미세한 차이를 조정)
+return r.__extends(e, t), e.prototype.updateContentWidth = function () {
+    //KSO :: 줄였을때 carousel 크기 조정
+    var carouselMargin = this.props.format.carouselMargin;
+    var subMargin = 30;
+    if (deviceChk == 'M') {
+        carouselMargin = 44;    //모바일일때 동일하나(아이폰 플러스의 경우 마진 오류로 인한 조정)
+    }
+    var t = parseInt($('.wc-message-groups').css('width')) - carouselMargin - subMargin; 
+    this.root.style.width = "", this.root.offsetWidth > t && (this.root.style.width = t.toString() + "px", this.hscroll.updateScrollButtons())
+}
+================================================================================
+(HTML TAG로 작성된 부분 적용하기)
+htmlCnt = originText.split('&lt;').length;  //꺽쇠를 자른수 만큼의 Count : 없으면 1, 있으면 1이상
+if(htmlCnt > 1){
+    originText = originText.replace(/&lt;/g, '<');
+    originText = originText.replace(/&gt;/g, '>');
+}
+this._element.innerHTML = originText;
+================================================================================
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<footer class="panel panel-default fixed-bottom">
-		<div class="panel-body">
-			Basic panel example
+	<footer class="container-fluid">
+		<div class="row footerBG">
+			<div class="col-md-12">
+				<small>&copy; KANG SINOOK. All rights reserved</small>
+			</div>
 		</div>
 	</footer>
 </body>

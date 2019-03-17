@@ -5,6 +5,7 @@ body{position:relative}
 .projectLink{width:150px;height:240px;margin:0 auto;position:relative;top:-35px;display:none}
 .mt100{margin-top:100px}
 .mt30{margin-top:30px}
+.mb50{margin-bottom:50px}
 /*#wrapper{min-width:600px}*/
 
 /* images */
@@ -25,5 +26,4 @@ body{position:relative}
 .startImg{background:url('../images/start.PNG') 50% 50% no-repeat;background-size:100% 100%;width:45px; height:45px;margin:40px auto 0;cursor:pointer}
 
 /* footer */
-.footerBG{background:#EAEAEA;height:50px;margin-top:50px}
-.footerText{color:rgba(88, 88, 88, 0.5);margin:15px 0 0 40px}
+.footerBG{background:#3c3c3c;color:#EAEAEA;height:50px;padding:15px 0 0 15px;position:fixed;width:100%;bottom:0}
